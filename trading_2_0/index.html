@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptoWave | Advanced Trading Platform</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- TradingView Charting Library -->
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+  <!-- TradingView Widget -->
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header with Navigation -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo">
+          <span class="logo-text">CryptoWave</span>
+          <div class="logo-dot"></div>
+        </div>
+        <nav class="main-nav">
+          <a href="#" class="nav-item">Dashboard</a>
+          <a href="#" class="nav-item active">Trade</a>
+          <a href="#" class="nav-item">Portfolio</a>
+          <a href="#" class="nav-item">Staking</a>
+          <a href="#" class="nav-item">Markets</a>
+        </nav>
+      </div>
+      <div class="header-right">
+        <div class="market-status">
+          <div class="market-indicator positive">
+            <i class="fas fa-arrow-up"></i>
+            <span>Market: Bull</span>
+          </div>
+        </div>
+        <div class="user-section">
+          <div class="notifications">
+            <i class="far fa-bell"></i>
+            <span class="notification-badge">3</span>
+          </div>
+          <div class="wallet-balance">
+            <div class="balance-amount">$24,032.58</div>
+            <div class="balance-change positive">+2.4%</div>
+          </div>
+          <div class="user-profile">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Profile" class="user-avatar">
+            <div class="user-menu-dropdown">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Trading Interface -->
+    <main class="trading-interface">
+      <!-- Left Panel: Market Pairs -->
+      <aside class="market-pairs-panel">
+        <div class="panel-header">
+          <h3>Markets</h3>
+          <div class="search-container">
+            <input type="text" placeholder="Search pairs..." class="search-input">
+            <i class="fas fa-search search-icon"></i>
+          </div>
+        </div>
+        <div class="panel-tabs">
+          <button class="tab-btn active">Favorites</button>
+          <button class="tab-btn">Spot</button>
+          <button class="tab-btn">Futures</button>
+        </div>
+        <div class="market-list">
+          <div class="market-pair active">
+            <div class="pair-info">
+              <div class="pair-icon">
+                <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=025" alt="BTC">
+              </div>
+              <div class="pair-name">
+                <div class="primary-pair">BTC/USDT</div>
+                <div class="secondary-label">Perpetual</div>
+              </div>
+            </div>
+            <div class="pair-price">
+              <div class="current-price">$57,432.80</div>
+              <div class="price-change positive">+3.42%</div>
+            </div>
+          </div>
+          <div class="market-pair">
+            <div class="pair-info">
+              <div class="pair-icon">
+                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=025" alt="ETH">
+              </div>
+              <div class="pair-name">
+                <div class="primary-pair">ETH/USDT</div>
+                <div class="secondary-label">Perpetual</div>
+              </div>
+            </div>
+            <div class="pair-price">
+              <div class="current-price">$3,256.42</div>
+              <div class="price-change positive">+2.18%</div>
+            </div>
+          </div>
+          <div class="market-pair">
+            <div class="pair-info">
+              <div class="pair-icon">
+                <img src="https://cryptologos.cc/logos/solana-sol-logo.svg?v=025" alt="SOL">
+              </div>
+              <div class="pair-name">
+                <div class="primary-pair">SOL/USDT</div>
+                <div class="secondary-label">Perpetual</div>
+              </div>
+            </div>
+            <div class="pair-price">
+              <div class="current-price">$142.86</div>
+              <div class="price-change negative">-0.74%</div>
+            </div>
+          </div>
+          <div class="market-pair">
+            <div class="pair-info">
+              <div class="pair-icon">
+                <img src="https://cryptologos.cc/logos/cardano-ada-logo.svg?v=025" alt="ADA">
+              </div>
+              <div class="pair-name">
+                <div class="primary-pair">ADA/USDT</div>
+                <div class="secondary-label">Perpetual</div>
+              </div>
+            </div>
+            <div class="pair-price">
+              <div class="current-price">$0.52</div>
+              <div class="price-change positive">+1.24%</div>
+            </div>
+          </div>
+          <div class="market-pair">
+            <div class="pair-info">
+              <div class="pair-icon">
+                <img src="https://cryptologos.cc/logos/polygon-matic-logo.svg?v=025" alt="MATIC">
+              </div>
+              <div class="pair-name">
+                <div class="primary-pair">MATIC/USDT</div>
+                <div class="secondary-label">Perpetual</div>
+              </div>
+            </div>
+            <div class="pair-price">
+              <div class="current-price">$0.84</div>
+              <div class="price-change negative">-1.05%</div>
+            </div>
+          </div>
+          <div class="market-pair">
+            <div class="pair-info">
+              <div class="pair-icon">
+                <img src="https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=025" alt="AVAX">
+              </div>
+              <div class="pair-name">
+                <div class="primary-pair">AVAX/USDT</div>
+                <div class="secondary-label">Perpetual</div>
+              </div>
+            </div>
+            <div class="pair-price">
+              <div class="current-price">$35.24</div>
+              <div class="price-change positive">+2.65%</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Center Panel: TradingView Chart -->
+      <section class="chart-panel">
+        <div class="panel-header chart-header">
+          <div class="current-pair-info">
+            <div class="current-pair-icon">
+              <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=025" alt="BTC">
+            </div>
+            <div class="current-pair">BTC/USDT <span class="pair-type">PERPETUAL</span></div>
+            <div class="contract-info">
+              <div class="info-tag">
+                <span class="info-label">24h Change</span>
+                <span class="info-value positive">+3.42%</span>
+              </div>
+              <div class="info-tag">
+                <span class="info-label">24h High</span>
+                <span class="info-value">$58,124.50</span>
+              </div>
+              <div class="info-tag">
+                <span class="info-label">24h Low</span>
+                <span class="info-value">$56,289.75</span>
+              </div>
+              <div class="info-tag">
+                <span class="info-label">24h Vol</span>
+                <span class="info-value">$4.2B</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-controls">
+            <div class="time-selector">
+              <button class="time-btn">5m</button>
+              <button class="time-btn">15m</button>
+              <button class="time-btn active">1H</button>
+              <button class="time-btn">4H</button>
+              <button class="time-btn">1D</button>
+              <button class="time-btn">1W</button>
+            </div>
+            <div class="chart-actions">
+              <button class="chart-btn">
+                <i class="fas fa-chart-line"></i>
+              </button>
+              <button class="chart-btn">
+                <i class="fas fa-drawing-polygon"></i>
+              </button>
+              <button class="chart-btn">
+                <i class="fas fa-ruler"></i>
+              </button>
+              <button class="chart-btn">
+                <i class="fas fa-cog"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="tradingview-container" class="tradingview-chart">
+          <!-- TradingView Chart will be loaded here -->
+        </div>
+      </section>
+
+      <!-- Right Panel: Trading Form & Order Book -->
+      <aside class="trading-panel">
+        <div class="panel-tabs order-type-tabs">
+          <button class="tab-btn active">Futures</button>
+          <button class="tab-btn">Spot</button>
+          <button class="tab-btn">Convert</button>
+        </div>
+        
+        <!-- Trading Form -->
+        <div class="trading-form-container">
+          <div class="trading-form">
+            <!-- Position Direction Toggle - IMPROVED -->
+            <div class="form-group direction-selector">
+              <h4 class="form-label">Position</h4>
+              <div class="toggle-group direction-toggle">
+                <button class="direction-btn buy active" data-direction="long" id="longButton">
+                  <i class="fas fa-arrow-up"></i> Long
+                </button>
+                <button class="direction-btn sell" data-direction="short" id="shortButton">
+                  <i class="fas fa-arrow-down"></i> Short
+                </button>
+              </div>
+            </div>
+
+            <div class="form-group order-type-selector">
+              <h4 class="form-label">Type</h4>
+              <div class="toggle-group">
+                <button class="order-type-btn active" data-type="market">Market</button>
+                <button class="order-type-btn" data-type="limit">Limit</button>
+              </div>
+            </div>
+
+            <div class="form-group limit-price-group hidden">
+              <h4 class="form-label">Limit Price</h4>
+              <div class="input-with-tag">
+                <input type="text" class="form-input" value="57,432.80">
+                <div class="input-tag">USDT</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-label-row">
+                <h4 class="form-label">Amount</h4>
+                <div class="unit-toggle">
+                  <button class="unit-btn active" data-unit="usdt">USDT</button>
+                  <button class="unit-btn" data-unit="btc">BTC</button>
+                </div>
+              </div>
+              <div class="input-with-tag">
+                <input type="text" class="form-input" placeholder="0.00">
+                <div class="input-tag">USDT</div>
+              </div>
+            </div>
+
+            <!-- Leverage Slider - IMPROVED -->
+            <div class="form-group">
+              <div class="leverage-slider-container">
+                <div class="leverage-label">
+                  <span>Leverage</span>
+                  <span class="leverage-value">10×</span>
+                </div>
+                <div class="range-container">
+                  <input type="range" min="1" max="100" value="10" class="leverage-range" id="leverageSlider">
+                  <div class="range-track" id="leverageTrack"></div>
+                </div>
+                <div class="leverage-labels">
+                  <span class="leverage-min">1×</span>
+                  <span class="leverage-max">100×</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group position-info">
+              <div class="info-item">
+                <span class="info-label">Available Balance</span>
+                <span class="info-value">24,032.58 USDT</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Max Position</span>
+                <span class="info-value" id="maxPosition">240,325.80 USDT</span>
+              </div>
+            </div>
+
+            <div class="position-percentage-btns">
+              <button class="percentage-btn">25%</button>
+              <button class="percentage-btn">50%</button>
+              <button class="percentage-btn">75%</button>
+              <button class="percentage-btn">100%</button>
+            </div>
+
+            <button class="open-position-btn buy" id="positionButton">
+              <span class="btn-text">Open Long Position</span>
+              <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Order Book -->
+        <div class="orderbook-container">
+          <div class="panel-header order-book-header">
+            <h3>Order Book</h3>
+            <div class="orderbook-controls">
+              <button class="control-btn"><i class="fas fa-sliders-h"></i></button>
+              <select class="precision-selector">
+                <option value="0">P: 0</option>
+                <option value="1">P: 1</option>
+                <option value="2" selected>P: 2</option>
+              </select>
+            </div>
+          </div>
+          <div class="orderbook">
+            <!-- Asks section (sell orders) -->
+            <div class="orderbook-asks">
+              <div class="orderbook-header">
+                <div class="col price">Price</div>
+                <div class="col amount">Amount</div>
+                <div class="col total">Total</div>
+              </div>
+              <div class="orderbook-rows asks">
+                <!-- Dynamically generated ask orders -->
+              </div>
+            </div>
+
+            <!-- Spread indicator -->
+            <div class="order-book-spread">
+              <div class="current-price">
+                <div class="price-value">57,432.80</div>
+                <div class="spread-value">Spread: 0.12%</div>
+              </div>
+            </div>
+
+            <!-- Bids section (buy orders) -->
+            <div class="orderbook-bids">
+              <div class="orderbook-rows bids">
+                <!-- Dynamically generated bid orders -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Bottom Panel: Open Positions & Order History -->
+    <section class="positions-section">
+      <div class="panel-tabs position-tabs">
+        <button class="tab-btn active">Open Positions</button>
+        <button class="tab-btn">Order History</button>
+        <button class="tab-btn">Trade History</button>
+      </div>
+      <div class="positions-table">
+        <div class="table-header">
+          <div class="col-position">Position</div>
+          <div class="col-size">Size</div>
+          <div class="col-entry">Entry Price</div>
+          <div class="col-mark">Mark Price</div>
+          <div class="col-liq">Liq. Price</div>
+          <div class="col-margin">Margin</div>
+          <div class="col-pnl">PnL (ROE%)</div>
+          <div class="col-action">Action</div>
+        </div>
+        <div class="table-content">
+          <div class="position-row">
+            <div class="col-position">
+              <span class="position-type long">Long</span>
+              <span class="position-pair">BTC/USDT</span>
+            </div>
+            <div class="col-size">0.25 BTC</div>
+            <div class="col-entry">$56,842.30</div>
+            <div class="col-mark">$57,432.80</div>
+            <div class="col-liq">$51,158.07</div>
+            <div class="col-margin">$1,421.06</div>
+            <div class="col-pnl positive">
+              <div class="pnl-amount">+$147.62</div>
+              <div class="pnl-percentage">+10.39%</div>
+            </div>
+            <div class="col-action">
+              <button class="close-btn">Close</button>
+            </div>
+          </div>
+          <div class="position-row">
+            <div class="col-position">
+              <span class="position-type short">Short</span>
+              <span class="position-pair">ETH/USDT</span>
+            </div>
+            <div class="col-size">2.5 ETH</div>
+            <div class="col-entry">$3,302.18</div>
+            <div class="col-mark">$3,256.42</div>
+            <div class="col-liq">$3,467.29</div>
+            <div class="col-margin">$825.55</div>
+            <div class="col-pnl positive">
+              <div class="pnl-amount">+$114.40</div>
+              <div class="pnl-percentage">+13.86%</div>
+            </div>
+            <div class="col-action">
+              <button class="close-btn">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
